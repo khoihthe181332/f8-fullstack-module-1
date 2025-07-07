@@ -1,0 +1,39 @@
+@use "./reset";
+
+// Layout
+@use "./layout/grid";
+@use "./layout/footer";
+@use "./layout/header";
+
+// Components
+
+// Pages
+
+// Common
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button,
+select,
+textarea,
+input {
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+}

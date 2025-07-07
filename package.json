@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "sass": "sass scss/style.scss:css/style.css -w",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0",
+    "sass": "^1.89.2",
+    "vite": "^7.0.2",
+    "vite-plugin-ejs": "^1.7.0"
+  }
+}
