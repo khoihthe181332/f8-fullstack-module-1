@@ -1,17 +1,23 @@
 @use "./reset";
+@use "./font";
 
 // Layout
 @use "./layout/grid";
-@use "./layout/footer";
 @use "./layout/header";
+@use "./layout/footer";
 
 // Components
 
 // Pages
+@use "./pages/index";
 
 // Common
 * {
     box-sizing: border-box;
+}
+
+.top-page {
+    width: 100vw;
 }
 
 html {
@@ -21,7 +27,7 @@ html {
 
 body {
     font-size: inherit;
-    font-family: inherit;
+    font-family: font.$font-body;
 }
 
 button,

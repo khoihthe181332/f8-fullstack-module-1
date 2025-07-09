@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "./variables";
+
+@mixin screen($key) {
+    $breakpoint: map.get(variables.$grid-breakpoints, $key);
+    @if ($breakpoint) {
+        @media (max-width: ($breakpoint - 0.02)) {
+            @content;
+        }
+    } @else {
+        @error 'The value "#{$key}" is not in breakpoints list.';
+    }
+}

@@ -1,0 +1,181 @@
+@use "../mixins";
+@use "../font";
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    position: relative;
+
+    .menu {
+        display: none;
+        font-size: 2rem;
+        margin-top: 5px;
+        padding: 10px 10px 10px 0;
+
+        @include mixins.screen(lg) {
+            display: block;
+        }
+    }
+
+    #openNav:checked ~ .header__nav {
+        position: absolute;
+        display: block;
+        top: 140px;
+        left: 0;
+        right: -25px;
+        z-index: 10;
+
+        @include mixins.screen(md) {
+            top: 73px;
+        }
+    }
+
+    .header__logo {
+        width: 85px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 5px;
+        font-family: font.$font-heading;
+        cursor: pointer;
+
+        @include mixins.screen(md) {
+            display: none;
+        }
+
+        h4 {
+            color: var(--Dark, #0e1412);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        h3 {
+            color: var(--Dark, #0e1412);
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 0.58;
+        }
+    }
+
+    .header__nav {
+        flex-grow: 1;
+        margin-right: 100px;
+
+        @include mixins.screen(lg) {
+            display: none;
+        }
+    }
+
+    .header__nav--list {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 40px;
+
+        @include mixins.screen(lg) {
+            flex-direction: column;
+            background-color: #0e1412;
+        }
+
+        & li {
+            color: var(--Dark, #0e1412);
+            font-family: font.$font-body;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.75;
+            padding: 12px;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+
+            @include mixins.screen(lg) {
+                color: #fff;
+                padding: unset;
+                border-bottom: 1px solid;
+                border-radius: unset;
+
+                i {
+                    padding: 10px;
+                    font-size: 1.4rem;
+                    margin-right: 10px;
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+
+                @include mixins.screen(lg) {
+                    width: 100%;
+                    flex-grow: 1;
+                    padding: 10px;
+                    border-right: 1px solid;
+                }
+            }
+
+            transition: background-color 0.3s ease-in;
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 1.2px;
+                background-color: var(--Dark, #0e1412);
+
+                position: absolute;
+                left: 10px;
+                bottom: 12px;
+
+                transition: width 0.3s ease-in;
+            }
+
+            &:hover::after {
+                width: calc(100% - 20px);
+            }
+
+            &:focus {
+                color: var(--Orange, #fd6038);
+            }
+
+            & i {
+                font-size: 1.1rem;
+                margin-left: 6px;
+                transform: translateY(0);
+
+                transition: transform 0.3s ease-in;
+            }
+
+            &:focus i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .header__contact {
+        color: var(--Dark, #0e1412);
+        font-family: font.$font-body;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.75;
+
+        strong {
+            color: var(--Dark, #0e1412);
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+    }
+
+    @include mixins.screen(xl) {
+        .header__nav {
+            margin-right: 25px;
+            &--list {
+                column-gap: unset;
+            }
+        }
+    }
+}
