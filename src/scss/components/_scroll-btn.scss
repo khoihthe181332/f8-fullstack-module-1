@@ -1,0 +1,39 @@
+@use "../mixins";
+
+.scroll-btn {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background-color: #fd6038;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    @include mixins.screen(lg) {
+        width: 35px;
+        height: 35px;
+
+        bottom: 15px;
+        right: 15px;
+    }
+
+    @include mixins.screen(md) {
+        width: 30px;
+        height: 30px;
+
+        bottom: 10px;
+        right: 10px;
+    }
+
+    a {
+        font-size: 1.8rem;
+
+        padding: 12px;
+    }
+}
