@@ -1,78 +1,11 @@
 @use "../mixins";
 @use "../font";
+@use "../placeholder";
 
 .top-page {
     background: var(--Yellow-Light, #f8ebc9);
 }
 
-%btn {
-    background: var(--Orange, #fd6038);
-    padding: 15px 35px;
-    color: var(--White, #fff);
-    text-align: center;
-    font-family: font.$font-body;
-    font-size: 1.8rem;
-    font-weight: 600;
-    line-height: 1.66;
-    cursor: pointer;
-    transition: all 0.4s ease-out;
-
-    @include mixins.screen(xl) {
-        padding: 10px 25px;
-        font-size: 1.6rem;
-    }
-
-    @include mixins.screen(sm) {
-        padding: 10px;
-        font-size: 1.2rem;
-    }
-
-    &:hover {
-        background-color: #fff;
-        color: #fd6038;
-    }
-}
-
-%heading {
-    font-family: font.$font-heading;
-    font-size: 4.2rem;
-    font-weight: 700;
-    line-height: 1.24;
-
-    @include mixins.screen(xl) {
-        font-size: 3.2rem;
-    }
-
-    @include mixins.screen(lg) {
-        font-size: 2.4rem;
-    }
-}
-
-%hashtag {
-    font-family: "Roboto Slab", serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1.66;
-}
-
-%desc {
-    font-family: font.$font-body;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1.66;
-
-    @include mixins.screen(xl) {
-        font-size: 1.6rem;
-    }
-
-    @include mixins.screen(lg) {
-        font-size: 1.4rem;
-    }
-
-    @include mixins.screen(sm) {
-        font-size: 1.2rem;
-    }
-}
 // Hero
 .top-page__hero {
     padding: 162px 0;
@@ -585,136 +518,10 @@
 }
 
 // Team
-.team {
-    background: var(--Dark, #0e1412);
-    padding: 100px 0;
 
-    .inner {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__hashtag {
-        color: var(--Orange, #fd6038);
-        @extend %hashtag;
-        margin-bottom: 6px;
-    }
-    &__heading {
-        color: var(--White, #fff);
-        @extend %heading;
-        margin-bottom: 18px;
-    }
-
-    &__desc {
-        max-width: 470px;
-        color: #beccc7;
-        text-align: center;
-        @extend %desc;
-        margin-bottom: 70px;
-    }
-
-    &__list--card {
-        cursor: pointer;
-        &:hover {
-            img {
-                scale: 1.1;
-            }
-        }
-
-        &-img {
-            max-width: 370px;
-            height: 370px;
-            overflow: hidden;
-            position: relative;
-
-            @include mixins.screen(md) {
-                max-width: unset;
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center top;
-                transition: all 0.4s ease-out;
-            }
-        }
-
-        .img--btn {
-            @extend %btn;
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        &-info {
-            padding-top: 18px;
-            text-align: center;
-
-            .name {
-                color: var(--White, #fff);
-                font-family: font.$font-body;
-                font-size: 2.2rem;
-                font-weight: 700;
-                line-height: 1.45; /* 145.455% */
-            }
-
-            .pos {
-                color: #beccc7;
-                font-family: font.$font-body;
-                font-size: 1.6rem;
-                font-weight: 400;
-                line-height: 1.75; /* 175% */
-            }
-        }
-    }
-
-    &__btn {
-        @extend %btn;
-        margin-top: 55px;
-    }
-}
 
 // Awards
-.awards {
-    padding: 100px 0;
-    background: var(--Yellow-Light, #f8ebc9);
 
-    &__hashtag {
-        color: var(--Dark, #0e1412);
-        text-align: center;
-        @extend %hashtag;
-    }
-
-    &__heading {
-        color: var(--Dark, #0e1412);
-        text-align: center;
-        @extend %heading;
-        margin-bottom: 70px;
-    }
-
-    &__list--img {
-        max-width: 270px;
-        height: 270px;
-        background: var(--White, #fff);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        @include mixins.screen(lg) {
-            max-width: unset;
-        }
-
-        img {
-            width: 60%;
-            object-fit: contain;
-            object-position: center;
-        }
-    }
-}
 
 // Testimonial
 .testimonial {
@@ -1075,35 +882,4 @@
 }
 
 // CTA
-.cta {
-    background: var(--Green, #017848);
-    padding: 100px 0;
-    color: var(--White, #fff);
-    .inner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
 
-    &__hashtag {
-        @extend %hashtag;
-        margin-bottom: 6px;
-    }
-
-    &__heading {
-        @extend %heading;
-        margin-bottom: 18px;
-    }
-
-    &__desc {
-        max-width: 470px;
-        text-align: center;
-        @extend %desc;
-        margin-bottom: 38px;
-    }
-
-    &__btn {
-        @extend %btn;
-    }
-}

@@ -1,0 +1,48 @@
+@use "../mixins";
+@use "../font";
+@use "../placeholder" as *;
+
+.awards {
+    padding: 100px 0;
+    background: var(--Yellow-Light, #f8ebc9);
+
+    @include mixins.screen(md) {
+        padding: 70px 0;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 40px 0;
+    }
+
+    &__hashtag {
+        color: var(--Dark, #0e1412);
+        text-align: center;
+        @extend %hashtag;
+    }
+
+    &__heading {
+        color: var(--Dark, #0e1412);
+        text-align: center;
+        @extend %heading;
+        margin-bottom: 70px;
+    }
+
+    &__list--img {
+        max-width: 270px;
+        height: 270px;
+        background: var(--White, #fff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mixins.screen(lg) {
+            max-width: unset;
+        }
+
+        img {
+            width: 60%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+}

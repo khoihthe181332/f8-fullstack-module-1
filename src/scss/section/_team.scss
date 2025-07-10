@@ -1,0 +1,108 @@
+@use "../mixins";
+@use "../font";
+@use "../placeholder";
+
+.team {
+    background: var(--Dark, #0e1412);
+    padding: 100px 0;
+
+    @include mixins.screen(md) {
+        padding: 70px 0;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 40px 0;
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__hashtag {
+        color: var(--Orange, #fd6038);
+        @extend %hashtag;
+        margin-bottom: 6px;
+    }
+    &__heading {
+        color: var(--White, #fff);
+        @extend %heading;
+        margin-bottom: 18px;
+    }
+
+    &__desc {
+        max-width: 470px;
+        color: #beccc7;
+        text-align: center;
+        @extend %desc;
+        margin-bottom: 70px;
+
+        @include mixins.screen(md) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list--card {
+        cursor: pointer;
+        &:hover {
+            img {
+                scale: 1.1;
+            }
+        }
+
+        &-img {
+            max-width: 370px;
+            height: 370px;
+            overflow: hidden;
+            position: relative;
+
+            @include mixins.screen(md) {
+                max-width: unset;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center top;
+                transition: all 0.4s ease-out;
+            }
+        }
+
+        .img--btn {
+            @extend %btn;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-info {
+            padding-top: 18px;
+            text-align: center;
+
+            .name {
+                color: var(--White, #fff);
+                font-family: font.$font-body;
+                font-size: 2.2rem;
+                font-weight: 700;
+                line-height: 1.45; /* 145.455% */
+            }
+
+            .pos {
+                color: #beccc7;
+                font-family: font.$font-body;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 1.75; /* 175% */
+            }
+        }
+    }
+
+    &__btn {
+        @extend %btn;
+        margin-top: 55px;
+    }
+}

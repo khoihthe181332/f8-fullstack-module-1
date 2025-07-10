@@ -1,0 +1,7 @@
+@use "../placeholder";
+@use "../mixins";
+@use "../font";
+
+.btn {
+    @extend %btn;
+}

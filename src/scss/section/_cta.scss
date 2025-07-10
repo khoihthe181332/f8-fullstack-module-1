@@ -1,0 +1,44 @@
+@use "../mixins";
+@use "../font";
+@use "../placeholder" as *;
+
+.cta {
+    background: var(--Green, #017848);
+    padding: 100px 0;
+    color: var(--White, #fff);
+
+    @include mixins.screen(md) {
+        padding: 70px 0;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 40px 0;
+    }
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__hashtag {
+        @extend %hashtag;
+        margin-bottom: 6px;
+    }
+
+    &__heading {
+        @extend %heading;
+        margin-bottom: 18px;
+    }
+
+    &__desc {
+        max-width: 470px;
+        text-align: center;
+        @extend %desc;
+        margin-bottom: 38px;
+    }
+
+    &__btn {
+        @extend %btn;
+    }
+}

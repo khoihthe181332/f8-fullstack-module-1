@@ -6,10 +6,17 @@
 @use "./layout/header";
 @use "./layout/footer";
 
+// Section
+@use "./section/team";
+@use "./section/cta";
+@use "./section/awards";
+
 // Components
+@use "./components/button";
 
 // Pages
 @use "./pages/index";
+@use "./pages/about";
 
 // Common
 * {

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm Page - Module 1</title>
+
+    <%- include ("./partials/head") %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Start top page -->
+        <div class="about-1-topPage">
+            <div class="container">
+                <div class="inner">
+                    <!-- Start header -->
+                    <%- include ("./partials/header") %>
+                        <!-- End header -->
+
+                        <!-- Start hero -->
+                        <div class="about-1-hero">
+                            <div class="row">
+                                <div class="col-8 offset-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+                                    <div class="about-1-hero__hashtag">
+                                        #1 Law Firm in New York
+                                    </div>
+                                    <div class="about-1-hero__heading">Where The Experience To Guide You</div>
+                                    <div class="about-1-hero__desc">A law firm with deep expertise in New Jersey
+                                        residential &
+                                        investment property transactions and many other things.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End hero -->
+                </div>
+            </div>
+        </div>
+        <!-- End top page -->
+
+        <main>
+            <!-- Story -->
+            <section class="story">
+                <div class="container">
+                    <div class="inner">
+                        <div class="row gx-xl-4 gx-lg-4">
+                            <div class="col-6 col-md-12">
+                                <div class="story__content">
+                                    <div class="story__content--hashtag">#Story</div>
+                                    <div class="story__content--heading">Through And Complete Attention to Law</div>
+                                    <div class="story__content--desc">
+                                        <p>Your initial meeting with Parmele Law Firm sets in motion the difficult – and
+                                            tedious – process of getting your benefits for you.
+                                        </p>
+                                        <p> While Mr. Parmele, his paralegals, and clerks are busy assisting you with
+                                            your
+                                            forms, helping you assemble your documentation, and keeping you updated
+                                            regularly, Mr.Parmele is busy behind the scenes, focusing on winning your
+                                            case.
+                                        </p>
+                                        How your case ends up may well be up to you.
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="story__img">
+                                    <img src="./img/about_img/story-img.png" alt="">
+                                    <span class="story__img--yellow-1"></span>
+                                    <span class="story__img--yellow-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section class="gallery">
+                <div class="container">
+                    <div class="inner">
+                        <div class="gallery__hashtag">#Gallery</div>
+                        <div class="gallery__heading">Justice Law Firm</div>
+                        <div class="gallery__desc">
+                            Our Law Office provides a professional experience for all our clients, helping them navigate
+                            their legal rights.
+                        </div>
+                        <div class="gallery__img">
+                            <img src="./img/about_img/gallery-img.png" alt="">
+                        </div>
+                        <div class="gallery__dot">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="gallery__data">
+                            <div class="data-box">
+                                <div class="data-number">1782</div>
+                                <div class="data-desc">Law Cases</div>
+                            </div>
+                            <div class="data-box">
+                                <div class="data-number">10+</div>
+                                <div class="data-desc">Lawyer</div>
+                            </div>
+                            <div class="data-box">
+                                <div class="data-number">98%</div>
+                                <div class="data-desc">Happy Clients</div>
+                            </div>
+                            <div class="data-box">
+                                <div class="data-number">90%</div>
+                                <div class="data-desc">Winning case</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video -->
+            <section class="video">
+                <div class="container">
+                    <div class="inner">
+                        <div class="video__hashtag">#Video</div>
+                        <div class="video__heading">Our History & Mission</div>
+                        <div class="video__desc">
+                            Our Law Office provides a professional experience for all our clients,
+                            helping them navigate their legal rights.
+                        </div>
+                        <div class="video__feature">
+                            <div class="interview-video">
+                                <img src="./img/about_img/video-img.png" alt="">
+                            </div>
+                            <div class="video-play-btn">
+                                <img src="./img/about_img/Play.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team -->
+            <%- include ("./partials/team") %>
+
+                <!-- Awards -->
+                <%- include ("./partials/awards") %>
+
+                    <!-- CTA -->
+                    <%- include ("./partials/cta") %>
+        </main>
+
+        <!-- Start end page -->
+        <%- include ("./partials/footer") %>
+            <!-- End end page -->
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

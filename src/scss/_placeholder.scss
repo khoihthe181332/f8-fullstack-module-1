@@ -1,0 +1,83 @@
+@use "./mixins";
+@use "./font";
+
+%btn {
+    background: var(--Orange, #fd6038);
+    padding: 15px 35px;
+    color: var(--White, #fff);
+    text-align: center;
+    font-family: font.$font-body;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+
+    @include mixins.screen(xl) {
+        padding: 10px 25px;
+        font-size: 1.6rem;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #fd6038;
+    }
+}
+
+%heading {
+    font-family: font.$font-heading;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.24;
+
+    @include mixins.screen(xl) {
+        font-size: 3.2rem;
+    }
+
+    @include mixins.screen(lg) {
+        font-size: 2.4rem;
+    }
+}
+
+%hashtag {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.66;
+
+    @include mixins.screen(xl) {
+        font-size: 1.6rem;
+    }
+
+    @include mixins.screen(lg) {
+        font-size: 1.4rem;
+    }
+
+    @include mixins.screen(sm) {
+        font-size: 1.2rem;
+    }
+}
+
+%desc {
+    font-family: font.$font-body;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.66;
+
+    @include mixins.screen(xl) {
+        font-size: 1.6rem;
+    }
+
+    @include mixins.screen(lg) {
+        font-size: 1.4rem;
+    }
+
+    @include mixins.screen(sm) {
+        font-size: 1.2rem;
+    }
+}

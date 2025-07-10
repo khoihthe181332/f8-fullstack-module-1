@@ -12,6 +12,7 @@ export default defineConfig ({
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, "src/index.html"),
+                about: path.resolve(__dirname, "src/about.html"),
                 // ...
             }
         }
