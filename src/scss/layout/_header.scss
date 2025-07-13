@@ -35,7 +35,7 @@ header {
         right: -25px;
         z-index: 10;
 
-        @include mixins.screen(md) {
+        @include mixins.screen(lg) {
             top: 73px;
         }
     }
@@ -50,7 +50,7 @@ header {
             font-family: font.$font-heading;
             cursor: pointer;
 
-            @include mixins.screen(md) {
+            @include mixins.screen(lg) {
                 display: none;
             }
         }
@@ -97,7 +97,7 @@ header {
             background-color: #0e1412;
         }
 
-        & li {
+        & > li {
             color: var(--Dark, #0e1412);
             font-family: font.$font-body;
             font-size: 1.6rem;
@@ -105,70 +105,66 @@ header {
             line-height: 1.75;
             padding: 10px;
             border-radius: 10px;
+            position: relative;
 
             display: flex;
             align-items: center;
 
-            position: relative;
+            &:hover {
+                > a {
+                    color: var(--Orange, #fd6038);
+                }
 
-            @include mixins.screen(lg) {
-                color: #fff;
-                padding: unset;
-                border-bottom: 1px solid;
-                border-radius: unset;
+                > i {
+                    color: var(--Orange, #fd6038);
+                    transform: rotate(180deg);
+                }
 
-                i {
-                    padding: 8px;
-                    font-size: 1.4rem;
-                    margin-right: 10px;
+                .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: scale(1);
+                }
+
+                @include mixins.screen(lg) {
+                    flex-direction: column;
+                    align-items: stretch;
+                    > a {
+                        color: #fff;
+                        display: flex;
+                    }
+
+                    > i {
+                        color: #fff;
+                        transform: rotate(180deg);
+                    }
+
+                    .sub-menu {
+                        display: block;
+                    }
                 }
             }
 
-            a {
+            > a {
                 display: flex;
                 align-items: center;
 
                 @include mixins.screen(lg) {
-                    width: 100%;
+                    color: #fff;
                     flex-grow: 1;
-                    padding: 10px;
-                    border-right: 1px solid;
                 }
             }
 
-            transition: background-color 0.3s ease-in;
-
-            &::after {
-                content: "";
-                width: 0;
-                height: 1.2px;
-                background-color: var(--Dark, #0e1412);
-
-                position: absolute;
-                left: 10px;
-                bottom: 12px;
-
-                transition: width 0.3s ease-in;
-            }
-
-            &:hover::after {
-                width: calc(100% - 20px);
-            }
-
-            &:focus {
-                color: var(--Orange, #fd6038);
-            }
-
-            & i {
-                font-size: 1.1rem;
-                margin-left: 6px;
+            > i {
+                font-size: 1.4rem;
+                margin-left: 10px;
                 transform: translateY(0);
 
-                transition: transform 0.3s ease-in;
-            }
+                transition: transform 0.2s;
 
-            &:focus i {
-                transform: rotate(180deg);
+                @include mixins.screen(lg) {
+                    color: #fff;
+                }
             }
         }
     }
@@ -190,10 +186,73 @@ header {
 
     @include mixins.screen(xl) {
         .header__nav {
-            margin-right: 25px;
+            margin-right: 0;
             &--list {
                 column-gap: unset;
+                gap: 5px;
+                > li {
+                    line-height: unset;
+                }
             }
         }
+
+        .header__contact {
+            strong {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.sub-menu {
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 100%;
+    left: -5%;
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transform-origin: top left;
+
+    transition: all 0.4s;
+
+    li {
+        width: 200px;
+        transition: all 0.4s ease-in;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #58686350;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: #fd6038;
+            a {
+                transform: translateX(10px);
+            }
+        }
+
+        a {
+            display: block;
+            padding: 15px 10px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 100%;
+
+            transition: transform 0.3s ease-in;
+        }
+    }
+
+    @include mixins.screen(lg) {
+        position: static;
+        display: none;
+        width: 100%;
+        transform: none;
+        background: #fff;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }

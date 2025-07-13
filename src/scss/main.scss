@@ -17,7 +17,10 @@
 
 // Pages
 @use "./pages/index";
-@use "./pages/about";
+@use "./pages/about-1";
+@use "./pages/about-2";
+@use "./pages/practice";
+@use "./pages/page-404";
 
 // Common
 * {
