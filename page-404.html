@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Trang không tìm thấy</title>
+    <!-- Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet">
+  <script type="module" crossorigin src="/f8-fullstack-module-1/assets/main-CRte8Bq9.js"></script>
+  <link rel="stylesheet" crossorigin href="/f8-fullstack-module-1/assets/main-BbAJSRuM.css">
+</head>
+
+<body>
+    <div class="wrapper-404">
+        <div class="container-404">
+            <!-- Floating shapes background -->
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+            </div>
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="error-code">
+                    <span class="digit">4</span>
+                    <span class="digit">0</span>
+                    <span class="digit">4</span>
+                </div>
+
+                <div class="error-message">
+                    <h1>Oops! Trang không tìm thấy</h1>
+                    <p>Trang bạn đang tìm kiếm có thể đã được di chuyển, xóa hoặc không tồn tại.</p>
+                </div>
+
+                <div class="actions">
+                    <button class="btn-home" onclick="goHome()">
+                        <span>Về trang chủ</span>
+                        <div class="btn-bg"></div>
+                    </button>
+                    <button class="btn-back" onclick="goBack()">
+                        <span>Quay lại</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Animated robot/character -->
+            <div class="robot">
+                <div class="robot-head">
+                    <div class="eye eye-left"></div>
+                    <div class="eye eye-right"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="robot-body">
+                    <div class="antenna"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = '/';
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        // Add some interactive animations
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.shape');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.5;
+                const xMove = (x - 0.5) * speed * 20;
+                const yMove = (y - 0.5) * speed * 20;
+
+                shape.style.transform = `translate(${xMove}px, ${yMove}px) rotate(${xMove}deg)`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
