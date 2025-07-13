@@ -1,3 +1,75 @@
 @use "../mixins";
 @use "../font";
 @use "../placeholder";
+
+.practice-top-page {
+    background: #f8ebc9;
+    padding-bottom: 30px;
+}
+
+main {
+    padding-bottom: 150px;
+    @include mixins.screen(md) {
+        padding-bottom: 50px;
+    }
+    section {
+        margin-bottom: 48px;
+        @include mixins.screen(md) {
+            margin-bottom: 30px;
+        }
+        @include mixins.screen(sm) {
+            margin-bottom: 25px;
+        }
+    }
+
+    img {
+        width: 100%;
+        max-height: 570px;
+        object-fit: cover;
+        margin-bottom: 70px;
+        @include mixins.screen(md) {
+            height: 270px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        @include mixins.screen(sm) {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+    }
+
+    .title {
+        @extend %heading;
+        color: var(--Dark, #0e1412);
+        margin-bottom: 18px;
+        @include mixins.screen(md) {
+        }
+    }
+
+    .desc {
+        @extend %desc;
+        color: var(--Grey, #586863);
+        display: flex;
+        flex-direction: column;
+        row-gap: 22px;
+        @include mixins.screen(md) {
+            row-gap: 15px;
+        }
+    }
+
+    .list {
+        @extend %desc;
+        color: var(--Dark, #0e1412);
+        font-weight: 500;
+        list-style: disc;
+        transform: translateX(20px);
+        margin: 28px 0;
+        @include mixins.screen(md) {
+            margin: 15px 0;
+        }
+
+        @include mixins.screen(sm) {
+            margin: 10px 0;
+        }
+    }
+}
