@@ -10,6 +10,7 @@
 @use "./section/team";
 @use "./section/cta";
 @use "./section/awards";
+@use "./section/blog-list";
 
 // Components
 @use "./components/button";
@@ -20,6 +21,7 @@
 @use "./pages/about-1";
 @use "./pages/about-2";
 @use "./pages/practice";
+@use "./pages/blog";
 @use "./pages/page-404";
 
 // Common

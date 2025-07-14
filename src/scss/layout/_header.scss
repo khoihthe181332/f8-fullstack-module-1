@@ -30,6 +30,7 @@ header {
     #openNav:checked ~ .header__nav {
         position: absolute;
         display: block;
+        width: 100%;
         top: 140px;
         left: 0;
         right: -25px;
@@ -110,6 +111,10 @@ header {
             display: flex;
             align-items: center;
 
+            @include mixins.screen(lg) {
+                padding: 0 10px;
+            }
+
             &:hover {
                 > a {
                     color: var(--Orange, #fd6038);
@@ -152,6 +157,15 @@ header {
                 @include mixins.screen(lg) {
                     color: #fff;
                     flex-grow: 1;
+                    padding: 13px 5px;
+                }
+
+                @include mixins.screen(md) {
+                    padding: 10px 5px;
+                }
+
+                @include mixins.screen(sm) {
+                    padding: 8px 5px;
                 }
             }
 
@@ -225,6 +239,7 @@ header {
 
         &:not(:last-child) {
             border-bottom: 1px solid #58686350;
+            width: 100%;
         }
 
         &:hover {

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm Page - Module 1</title>
+    <%- include ("./partials/head") %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="blog-top-page">
+            <div class="container">
+                <div class="inner">
+                    <!-- Start header -->
+                    <%- include ("./partials/header") %>
+                        <!-- End header -->
+                </div>
+            </div>
+        </div>
+
+        <main class="blog-main">
+            <!-- Blog -->
+            <section class="blog__feature">
+                <div class="container">
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-6 offset-0 col-lg-9 col-md-10">
+                                <div class="blog__feature--heading">Justice Law Firm Press Releases</div>
+                            </div>
+                        </div>
+                        <div class="blog__feature--option">
+                            <button class="btn">ALL</button>
+                            <button class="btn">Recent</button>
+                            <button class="btn">Popular</button>
+                            <button class="btn">Trending</button>
+                            <button class="btn">Oldest</button>
+                        </div>
+                        <%- include ("./partials/blog-list") %>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog-contact -->
+            <section class="blog__contact">
+                <div class="container">
+                    <div class="inner">
+                        <div class="blog__contact--hashtag">
+                            #Newsletter
+                        </div>
+                        <div class="blog__contact--heading">
+                            Subscribe Our Newsletter
+                        </div>
+                        <div class="blog__contact--input">
+                            <input type="email" name="" placeholder="Enter your email...">
+                            <button type="submit" class="btn">Subscribe</button>
+                        </div>
+                        <div class="blog__contact--desc">
+                            <p>The latest Law News. <span>Stright to your inbox</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog list -->
+            <section class="blog__list-blog-page">
+                <div class="container">
+                    <div class="inner">
+                        <%- include ("./partials/blog-list") %>
+                            <%- include ("./partials/blog-list") %>
+                                <%- include ("./partials/blog-list") %>
+
+                                    <div class="pagination">
+                                        <button>1</button>
+                                        <button>2</button>
+                                        <button>3</button>
+                                        <button>4</button>
+                                        <button>5</button>
+                                    </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Start end page -->
+        <%- include ("./partials/footer") %>
+            <!-- End end page -->
+    </div>
+    <%- include ("./partials/scroll__btn") %>
+        <script type="module" src="./main.js"></script>
+</body>
+
+</html>
