@@ -556,6 +556,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                @include mixins.screen(md) {
+                    width: 35px;
+                    height: 35px;
+                }
             }
 
             .arrows--back {
@@ -623,7 +628,7 @@
             height: 100%;
         }
     }
-    
+
     &--author {
         color: var(--Dark, #0e1412);
         font-family: font.$font-body;

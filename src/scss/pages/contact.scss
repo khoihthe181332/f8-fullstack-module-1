@@ -1,0 +1,123 @@
+@use "../mixins";
+@use "../font";
+@use "../placeholder" as *;
+
+.contact-top-page {
+    background: #f8ebc9;
+    padding-bottom: 30px;
+}
+
+.contact-main {
+    padding: 100px 0;
+
+    @include mixins.screen(lg) {
+        padding: 70px 0;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 40px 0 50px;
+    }
+
+    .hashtag {
+        @extend %desc;
+        color: var(--Grey, #586863);
+        font-weight: 500;
+        margin-bottom: 12px;
+
+        @include mixins.screen(sm) {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+    }
+
+    .heading {
+        @extend %heading;
+        color: var(--Dark, #0e1412);
+        max-width: 670px;
+        margin-bottom: 20px;
+
+        @include mixins.screen(md) {
+            margin-bottom: 15px;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 2.1rem;
+            margin-bottom: 10.5px;
+        }
+    }
+
+    .desc {
+        @extend %desc;
+        color: var(--Grey, #586863);
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.6rem;
+        letter-spacing: -0.16px;
+        max-width: 530px;
+        margin-bottom: 70px;
+
+        @include mixins.screen(lg) {
+            margin-bottom: 50px;
+        }
+        @include mixins.screen(md) {
+            margin-bottom: 30px;
+        }
+
+        @include mixins.screen(sm) {
+            width: 265px;
+            font-size: 1rem;
+        }
+    }
+
+    .contact__input {
+        input {
+            width: 100%;
+            height: 60px;
+            background: var(--Gray-6, #f2f2f2);
+            padding: 18px 31px;
+            font-size: 1.6rem;
+
+            @include mixins.screen(md) {
+                padding: 12px 25px;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            background: var(--Gray-6, #f2f2f2);
+            padding: 20px 31px;
+            font-size: 1.6rem;
+            resize: vertical;
+        }
+
+        ::placeholder {
+            @extend %desc;
+            font-size: 1.4rem;
+            line-height: 1.72;
+            color: var(--Grey, #586863);
+
+            @include mixins.screen(md) {
+            }
+        }
+    }
+
+    .contact__btn {
+        @extend %desc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 144px;
+        height: 62px;
+        border-radius: 31px;
+        background: var(--Dark, #0e1412);
+        color: var(--White, #fff);
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-top: 40px;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--Dark, #323232);
+        }
+    }
+}

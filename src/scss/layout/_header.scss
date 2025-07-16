@@ -93,6 +93,10 @@ header {
             column-gap: 20px;
         }
 
+        @include mixins.screen(xl) {
+            margin-right: 25px;
+        }
+
         @include mixins.screen(lg) {
             flex-direction: column;
             background-color: #0e1412;
@@ -110,6 +114,10 @@ header {
 
             display: flex;
             align-items: center;
+
+            @include mixins.screen(xl) {
+                font-size: 1.4rem;
+            }
 
             @include mixins.screen(lg) {
                 padding: 0 10px;

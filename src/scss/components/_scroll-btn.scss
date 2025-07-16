@@ -32,6 +32,11 @@
         right: 10px;
     }
 
+    @include mixins.screen(sm) {
+        bottom: 10px;
+        right: 18px;
+    }
+
     a {
         font-size: 1.8rem;
 

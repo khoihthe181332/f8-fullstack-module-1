@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm Page - Module 1</title>
+    <%- include ("./partials/head") %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="contact-top-page">
+            <div class="container">
+                <div class="inner">
+                    <!-- Start header -->
+                    <%- include ("./partials/header") %>
+                        <!-- End header -->
+                </div>
+            </div>
+        </div>
+
+        <main class="contact-main">
+            <div class="container">
+                <div class="inner">
+                    <!-- title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hashtag">
+                                Contact us
+                            </div>
+                        </div>
+                        <div class="col-7 col-lg-9 col-sm-12">
+                            <div class="heading">We Are Always Ready To Hear For You.</div>
+                        </div>
+                        <div class="col-6 col-lg-8 col-md-11">
+                            <div class="desc">The right move at the right time saves your investment. live the dream of
+                                expanding your business.</div>
+                        </div>
+                    </div>
+                    <!-- form -->
+                    <div class="row gy-3 gy-md-2">
+                        <div class="col-6 col-md-12">
+                            <div class="contact__input">
+                                <input type="text" name="name" placeholder="Enter your name">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <div class="contact__input">
+                                <input type="text" name="company" placeholder="Company (option)">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <div class="contact__input">
+                                <input type="email" name="email" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <div class="contact__input">
+                                <input type="text" name="phone" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="contact__input">
+                                <textarea name="desc" id="" placeholder="Tell us about yourself"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="contact__btn">
+                        Contact us
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Start end page -->
+        <%- include ("./partials/footer") %>
+            <!-- End end page -->
+    </div>
+
+    <%- include ("./partials/scroll__btn") %>
+        <script type="module" src="./main.js"></script>
+</body>
+
+</html>
