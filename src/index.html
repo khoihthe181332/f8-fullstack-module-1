@@ -49,7 +49,39 @@
                                             <div class="hero__img--btn">
                                                 <img loading="lazy" src="./img/index_img/hero-play.svg"
                                                     alt="Play Video" />
-                                                <!-- <span class="hero__img--video-text">Watch Our Video</span> -->
+                                                <div class="hero__img--btn">
+                                                    <img loading="lazy" src="./img/index_img/hero-play.svg"
+                                                        alt="Play Video" />
+                                                    <!-- vòng chữ -->
+                                                    <svg class="hero__img--video-text" width="200" height="200"
+                                                        viewBox="0 0 200 200">
+                                                        <!-- Định nghĩa 2 nửa vòng -->
+                                                        <defs>
+                                                            <!-- Nửa trên -->
+                                                            <path id="topHalf" d="M25,100 a75,75 0 0,1 150,0" />
+                                                            <!-- Nửa dưới -->
+                                                            <path id="bottomHalf" d="M175,100 a75,75 0 0,1 -150,0" />
+
+                                                        </defs>
+                                                        <!-- Cụm chữ trên -->
+                                                        <text font-size="2.2rem" font-family="Roboto Slab"
+                                                            font-weight="400" fill="#0e1412" letter-spacing="3">
+                                                            <textPath xlink:href="#topHalf" startOffset="50%"
+                                                                text-anchor="middle">
+                                                                Watch Our Video
+                                                            </textPath>
+                                                        </text>
+
+                                                        <!-- Cụm chữ dưới -->
+                                                        <text font-size="2.2rem" font-family="Roboto Slab"
+                                                            font-weight="400" fill="#0e1412" letter-spacing="3">
+                                                            <textPath xlink:href="#bottomHalf" startOffset="50%"
+                                                                text-anchor="middle">
+                                                                Watch Our Video
+                                                            </textPath>
+                                                        </text>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -112,6 +112,7 @@
         }
 
         .hero__img--btn {
+            cursor: pointer;
             & img {
                 position: absolute;
                 top: -13%;
@@ -143,12 +144,55 @@
 
             .hero__img--video-text {
                 position: absolute;
-                top: -10%;
-                left: -10%;
+                top: -25%;
+                left: -20.5%;
+                z-index: 20;
                 color: var(--Dark, #0e1412);
-                font-family: font.$font-heading;
-                font-size: 1.8rem;
-                font-weight: 400;
+                animation: rotateText 10s linear infinite;
+                transform-origin: 50% 50%;
+
+                &:hover {
+                    animation-play-state: paused;
+                }
+                @include mixins.screen(xxl) {
+                    top: -23%;
+                    left: -21%;
+                }
+
+                @include mixins.screen(xl) {
+                    top: -28%;
+                    left: -23%;
+                }
+
+                @include mixins.screen(lg) {
+                    width: 135px;
+                    height: 135px;
+                    top: -19%;
+                    left: -25%;
+                }
+
+                @include mixins.screen(md) {
+                    width: 115px;
+                    height: 115px;
+                    top: -18.5%;
+                    left: -18.5%;
+                }
+
+                @include mixins.screen(sm) {
+                    width: 90px;
+                    height: 90px;
+                    top: -18%;
+                    left: -18%;
+                }
+            }
+
+            @keyframes rotateText {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
             }
         }
     }
