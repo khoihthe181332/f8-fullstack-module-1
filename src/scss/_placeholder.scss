@@ -10,6 +10,8 @@
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.66;
+
+    user-select: none;
     cursor: pointer;
     transition: all 0.4s ease-out;
 
@@ -19,7 +21,6 @@
     }
 
     @include mixins.screen(sm) {
-        padding: 10px;
         font-size: 1.2rem;
     }
 

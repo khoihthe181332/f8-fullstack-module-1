@@ -100,11 +100,16 @@
         &-decor--orange {
             width: 30%;
             height: 25%;
-            background: var(--Orange, #fd6038);
+            // fill: var(--Orange, #fd6038);
             position: absolute;
             top: 27%;
             right: -15%;
             z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
 
             @include mixins.screen(xl) {
                 right: -5%;
@@ -146,7 +151,7 @@
                 position: absolute;
                 top: -25%;
                 left: -20.5%;
-                z-index: 20;
+                z-index: 10;
                 color: var(--Dark, #0e1412);
                 animation: rotateText 10s linear infinite;
                 transform-origin: 50% 50%;
@@ -237,14 +242,20 @@
         }
 
         &--decor-2 {
-            background: var(--Yellow, #fed464);
-            width: 20%;
+            width: 25%;
             height: 28%;
             position: absolute;
             top: 43%;
             right: 0;
             transform: translateX(50%);
             z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                // color: var(--Yellow, #fed464);
+                // fill: #fed464;
+            }
         }
     }
 
@@ -412,14 +423,12 @@
             background-color: #fff;
             color: var(--Dark, #0e1412);
             @extend %descBase;
-        }
-    }
+            transition: all 0.5s ease;
 
-    [class*="col-"]:first-child {
-        .service__list--card-desc {
-            background: var(--Orange, #fd6038);
-            color: var(--White, #fff);
-            @extend %descBase;
+            &:hover {
+                background: var(--Orange, #fd6038);
+                color: var(--White, #fff);
+            }
         }
     }
 }
@@ -469,13 +478,20 @@
         }
 
         &--decor-orange-1 {
-            background: var(--Orange, #fd6038);
+            // background: var(--Orange, #fd6038);
             width: 28%;
             height: 25%;
+            max-width: 117px;
+            max-height: 129px;
             position: absolute;
             top: 50%;
             left: 0%;
             transform: translateX(-35%);
+
+            @include mixins.screen(sm) {
+                width: 63.32px;
+                height: 69.814px;
+            }
         }
 
         &--decor-orange-2 {
@@ -488,14 +504,22 @@
         }
 
         &--decor-green-1 {
-            background: var(--Green, #017848);
+            // background: var(--Green, #017848);
             width: 25%;
             height: 17%;
+            max-width: 130px;
+            max-height: 93px;
             position: absolute;
             top: 50%;
             left: 0%;
             transform: translateX(-35%);
+
+            @include mixins.screen(sm) {
+                width: 68.583px;
+                height: 49.063px;
+            }
         }
+
         &--decor-green-2 {
             background: var(--Green, #017848);
             width: 3.5%;
@@ -554,6 +578,11 @@
             max-width: 180px;
             @extend %btn;
 
+            @include mixins.screen(md) {
+                width: 128.298px;
+                height: 42.658px;
+            }
+
             &:hover {
                 outline: 2px solid #fd6038;
             }
@@ -607,14 +636,14 @@
                 }
             }
 
-            .arrows--back {
+            .arrows {
+                @extend %arrowSize;
                 background-color: #0e1412;
-                @extend %arrowSize;
-            }
+                transition: all 0.3s ease-in-out;
 
-            .arrows--next {
-                background-color: #fd6038;
-                @extend %arrowSize;
+                &:hover {
+                    background-color: #fd6038;
+                }
             }
         }
     }
@@ -631,6 +660,12 @@
             height: 8px;
             border-radius: 50%;
             background-color: #0e1412;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #fd6038;
+            }
         }
 
         .dot:first-child {
@@ -643,6 +678,17 @@
     padding: 30px;
     border: 1px solid #e6efec;
     background: var(--White, #fff);
+    cursor: pointer;
+
+    @include mixins.screen(sm) {
+        max-width: 335px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &:hover {
+        outline: 1.5px solid #b6b8b7;
+    }
 
     &--avt {
         width: 64px;
@@ -662,6 +708,10 @@
         color: var(--Grey, #586863);
         @extend %desc;
         margin: 30px 0;
+
+        @include mixins.screen(sm) {
+            font-size: 1.6rem;
+        }
     }
 
     &--quotes {

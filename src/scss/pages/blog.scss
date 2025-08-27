@@ -29,7 +29,7 @@
         }
 
         @include mixins.screen(md) {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
         }
     }
 
@@ -40,6 +40,11 @@
 
         @include mixins.screen(md) {
             flex-wrap: wrap;
+            column-gap: 20px;
+        }
+
+        button {
+            padding: 12.5px 29.2px;
         }
 
         button:first-child {

@@ -105,10 +105,6 @@
             height: 100%;
         }
 
-        @include mixins.screen(md) {
-            display: none;
-        }
-
         img {
             width: 100%;
             height: 100%;
@@ -130,7 +126,7 @@
         &--yellow-2 {
             width: 25%;
             height: 33.33%;
-            background: var(--Yellow, #fed464);
+            // background: var(--Yellow, #fed464);
             position: absolute;
             top: 50%;
             left: 0;

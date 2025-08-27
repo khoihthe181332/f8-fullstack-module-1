@@ -39,6 +39,12 @@
             max-width: unset;
         }
 
+        @include mixins.screen(md) {
+            width: 270px;
+            margin-left: 52px;
+            margin-right: 52px;
+        }
+
         img {
             width: 60%;
             object-fit: contain;

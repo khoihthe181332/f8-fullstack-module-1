@@ -33,9 +33,13 @@
 
     &--btn {
         background-color: transparent;
-        color: var(--Orange, #fd6038);
+        color: #000;
         padding: unset;
         @extend %btn;
+
+        &:hover {
+            color: var(--Orange, #fd6038);
+        }
     }
 }
 

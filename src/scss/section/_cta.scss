@@ -36,6 +36,11 @@
         text-align: center;
         @extend %desc;
         margin-bottom: 38px;
+
+        @include mixins.screen(sm) {
+            width: 276.228px;
+            font-size: 10px;
+        }
     }
 
     &__btn {

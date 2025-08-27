@@ -50,6 +50,11 @@
             img {
                 scale: 1.1;
             }
+
+            .img--btn {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
         &-img {
@@ -77,6 +82,10 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
+            transition: all 0.5s ease-in-out;
+
+            opacity: 0;
+            visibility: hidden;
         }
 
         &-info {

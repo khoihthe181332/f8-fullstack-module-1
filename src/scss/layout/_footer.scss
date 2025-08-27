@@ -72,6 +72,10 @@
         padding: 8px 0;
         position: relative;
 
+        @include mixins.screen(sm) {
+            display: block;
+        }
+
         &::after {
             content: "";
             background-color: #beccc7;
@@ -142,24 +146,25 @@ hr {
         color: #fff;
         font-size: 1.2rem;
 
+        @include mixins.screen(sm) {
+            padding-right: unset;
+        }
+
         &:hover {
-            i {
+            a {
                 background-color: #fd6038;
             }
         }
 
         a {
+            width: 36px;
+            height: 36px;
+            background-color: #313d39;
+            transition: all 0.3s ease-in;
+
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        i {
-            background-color: #313d39;
-            padding: 15px;
-            width: 36px;
-            height: 36px;
-            transition: all 0.3s ease-in;
         }
     }
 }
