@@ -23,8 +23,14 @@
 <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/f8-fullstack-module-1/assets/main-Bpidn8oX.js"></script>
-  <link rel="stylesheet" crossorigin href="/f8-fullstack-module-1/assets/main-DcsA_9Iq.css">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='31' height='31' viewBox='0 0 31 31' fill='none'>
+  <path d='M20.8669 19.5038C21.7214 20.3495 22.5224 20.3495 23.27 19.5038L30.4793 12.4476C31.1736 11.6547 31.1736 10.8619 30.4793 10.0691C29.6783 9.27621 28.8773 9.27621 28.0762 10.0691L20.8669 2.9335C21.7214 2.19352 21.7214 1.42711 20.8669 0.634271C20.1193 -0.211424 19.345 -0.211424 18.5439 0.634271L11.3346 7.53197C10.5336 8.32481 10.5336 9.11765 11.3346 9.91049C12.0823 10.6505 12.8833 10.6505 13.7377 9.91049L16.1408 12.289L11.3346 16.9668C10.5336 16.2796 9.73256 16.2796 8.93152 16.9668L0.600775 25.2916C-0.200258 26.0844 -0.200258 26.8772 0.600775 27.6701L2.76357 30.3657C3.618 31.2114 4.41904 31.2114 5.16667 30.3657L13.5775 22.0409C13.8979 21.7238 14.0581 21.3406 14.0581 20.8913C14.0581 20.442 13.8979 20.0588 13.5775 19.7417L18.3036 14.9847L20.7067 17.3632C20.0659 17.9974 20.1193 18.711 20.8669 19.5038ZM18.5439 10.0691L16.1408 7.69054L18.5439 5.31202L25.6731 12.4476L23.27 14.8261L20.8669 12.4476L18.5439 10.0691Z' fill='%230E1412'/>
+</svg>">
+  <script type="module" crossorigin src="/f8-fullstack-module-1/assets/main-YR2yoaB_.js"></script>
+  <link rel="stylesheet" crossorigin href="/f8-fullstack-module-1/assets/main-ySNRSA5W.css">
 </head>
 
 <body>
@@ -48,8 +54,14 @@
         </div>
     </div>
     <input type="checkbox" name="" id="openNav" hidden>
+    <!-- overlay -->
+    <label for="openNav" class="nav-overlay">
+    </label>
     <!-- header navigation -->
     <nav class="header__nav">
+        <label for="openNav">
+            <i class="fa-solid fa-xmark close-header-nav"></i>
+        </label>
         <ul class="header__nav--list">
             <li>
                 <a href="#!">Home</a>
@@ -102,7 +114,7 @@
     </nav>
     <!-- header contact -->
     <div class="header__contact">
-        <p>Call : <strong>(000) 123 456 789</strong></p>
+        <a href="telto: (000) 123 456 789" style="cursor: pointer;">Call : <strong>(000) 123 456 789</strong></a>
     </div>
 
 </header>
@@ -117,7 +129,7 @@
             <div class="container">
                 <div class="inner">
                     <div class="row gy-md-2 gy-sm-1">
-                        <div class="col-12">
+                        <div class="top-img col-12">
                             <img src="./img/practice_img/practice-img.png" alt="" loading="lazy">
                         </div>
                         <section class="col-8 offset-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0">
@@ -237,9 +249,10 @@
                     </div>
                 </div>
             </div>
+        </main>
 
-            <!-- CTA -->
-            <article class="cta">
+        <!-- CTA -->
+        <article class="cta">
     <div class="container">
         <div class="inner">
             <div class="cta__hashtag">#CTA</div>
@@ -252,10 +265,9 @@
         </div>
     </div>
 </article>
-        </main>
 
-        <!-- Start end page -->
-        <div class="end-page">
+            <!-- Start end page -->
+            <div class="end-page">
     <div class="container">
         <div class="inner">
             <!-- Start footer -->
@@ -281,8 +293,9 @@
                     <section class="footer__list">
                         <h3>Justice</h3>
                         <p>50 Harrison Street, PH Suite 445 Hoboken, NJ 07030
-                            (000) 123-4567
-                            yourlawfirm22@gmail.com</p>
+                            <a href="tel: (000)123-4567">(000)&nbsp;123-4567</a>
+                            <a href="mailto: yourlawfirm22@gmail.com">yourlawfirm22@gmail.com</a>
+                        </p>
                     </section>
                     <section class="footer__map">
                         <iframe
@@ -293,11 +306,11 @@
                 </div>
                 <hr />
                 <div class="footer__end">
-                    <div class="footer__end--logo">
+                    <a href class="footer__end--logo">
                         <img src="./img/index_img/logo-footer.svg" alt="" loading="lazy">
                         <h3>Justice</h3>
                         <h4>Law Firm</h4>
-                    </div>
+                    </a>
                     <div class="footer__end--contact">
                         <div class="copyright">Copyright © 2022 UI HUT All Rights Reserved </div>
                         <div class="social-icon">
@@ -323,7 +336,7 @@
         </div>
     </div>
 </div>
-            <!-- End end page -->
+                <!-- End end page -->
     </div>
 
     <div class="scroll-btn">
