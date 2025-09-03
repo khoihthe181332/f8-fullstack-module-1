@@ -21,24 +21,32 @@ header {
         font-size: 2rem;
         margin-top: 5px;
         padding: 10px 10px 10px 0;
+        cursor: pointer;
+        z-index: 1001;
 
         @include mixins.screen(lg) {
             display: block;
         }
     }
 
+    // Sidebar navigation
     #openNav:checked ~ .header__nav {
-        position: absolute;
-        display: block;
-        width: 100vw;
-        top: 140px;
-        left: 0;
-        // right: -25px;
-        z-index: 100;
+        transform: translateX(0);
+        visibility: visible;
+    }
 
-        @include mixins.screen(lg) {
-            top: 73px;
-        }
+    // Overlay cho sidebar
+    #openNav:checked ~ .nav-overlay {
+        display: block;
+    }
+
+    .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        transition: all 0.3s ease;
+        display: none;
     }
 
     .header__logo {
@@ -80,7 +88,47 @@ header {
         }
 
         @include mixins.screen(lg) {
-            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 100vh;
+            background-color: #0e1412;
+            z-index: 1000;
+            margin-right: 0;
+            padding: 20px 0;
+            overflow-y: auto;
+
+            visibility: hidden;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+
+            @include mixins.screen(md) {
+                width: 300px;
+            }
+
+            @include mixins.screen(sm) {
+                width: 280px;
+            }
+        }
+
+        label {
+            justify-content: flex-end;
+            margin-right: 20px;
+
+            @include mixins.screen(xxl) {
+                display: none;
+            }
+
+            @include mixins.screen(lg) {
+                display: flex;
+            }
+
+            .close-header-nav {
+                color: #fff;
+                font-size: 2.4rem;
+                padding: 10px;
+            }
         }
     }
 
@@ -99,7 +147,10 @@ header {
 
         @include mixins.screen(lg) {
             flex-direction: column;
-            background-color: #0e1412;
+            justify-content: flex-start;
+            column-gap: 0;
+            padding: 0 20px;
+            margin-right: unset;
         }
 
         & > li {
@@ -111,7 +162,6 @@ header {
             padding: 10px;
             border-radius: 10px;
             position: relative;
-
             display: flex;
             align-items: center;
 
@@ -120,7 +170,17 @@ header {
             }
 
             @include mixins.screen(lg) {
-                padding: 0 10px;
+                padding: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 0;
+                flex-direction: column;
+                align-items: start;
+            }
+
+            > i {
+                @include mixins.screen(lg) {
+                    display: none;
+                }
             }
 
             &:hover {
@@ -141,20 +201,19 @@ header {
                 }
 
                 @include mixins.screen(lg) {
-                    flex-direction: column;
-                    align-items: stretch;
                     > a {
-                        color: #fff;
-                        display: flex;
+                        color: var(--Orange, #fd6038);
                     }
 
                     > i {
-                        color: #fff;
+                        color: var(--Orange, #fd6038);
                         transform: rotate(180deg);
                     }
 
                     .sub-menu {
-                        display: block;
+                        max-height: 300px;
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
             }
@@ -162,19 +221,24 @@ header {
             > a {
                 display: flex;
                 align-items: center;
+                text-decoration: none;
 
                 @include mixins.screen(lg) {
                     color: #fff;
                     flex-grow: 1;
-                    padding: 13px 5px;
+                    padding: 15px 0;
+                    font-size: 1.5rem;
+                    transition: color 0.3s ease;
                 }
 
                 @include mixins.screen(md) {
-                    padding: 10px 5px;
+                    padding: 12px 0;
+                    font-size: 1.4rem;
                 }
 
                 @include mixins.screen(sm) {
-                    padding: 8px 5px;
+                    padding: 10px 0;
+                    font-size: 1.3rem;
                 }
             }
 
@@ -182,11 +246,12 @@ header {
                 font-size: 1.4rem;
                 margin-left: 10px;
                 transform: translateY(0);
-
-                transition: transform 0.2s;
+                transition: transform 0.3s ease;
 
                 @include mixins.screen(lg) {
                     color: #fff;
+                    font-size: 1.2rem;
+                    margin-left: auto;
                 }
             }
         }
@@ -227,6 +292,7 @@ header {
     }
 }
 
+// Submenu styles
 .sub-menu {
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -234,28 +300,68 @@ header {
     top: 100%;
     left: -5%;
     z-index: 100;
-
     opacity: 0;
     visibility: hidden;
     transform: scale(0);
     transform-origin: top left;
+    transition: all 0.4s ease;
 
-    transition: all 0.4s;
+    @include mixins.screen(lg) {
+        // Submenu trong sidebar - hiển thị dưới menu item
+        position: static;
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        transform-origin: unset;
+        border-radius: 0;
+        transition: all 0.3s ease;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
     li {
         width: 200px;
-        transition: all 0.4s ease-in;
+        transition: all 0.4s ease;
+
+        @include mixins.screen(lg) {
+            width: 100%;
+            border-bottom: none !important;
+        }
 
         &:not(:last-child) {
             border-bottom: 1px solid #58686350;
             width: 100%;
+
+            @include mixins.screen(lg) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        &:first-child {
+            @include mixins.screen(lg) {
+                border-top: none;
+            }
         }
 
         &:hover {
             color: #fff;
             background-color: #fd6038;
+
+            @include mixins.screen(lg) {
+                background-color: rgba(253, 96, 56, 0.2);
+            }
+
             a {
                 transform: translateX(10px);
+
+                @include mixins.screen(lg) {
+                    transform: translateX(5px);
+                    color: var(--Orange, #fd6038);
+                }
             }
         }
 
@@ -265,18 +371,25 @@ header {
             font-size: 1.4rem;
             cursor: pointer;
             width: 100%;
+            transition: all 0.3s ease;
+            text-decoration: none;
 
-            transition: transform 0.3s ease-in;
+            @include mixins.screen(lg) {
+                color: rgba(255, 255, 255, 0.8);
+                padding: 12px 25px;
+                font-size: 1.3rem;
+                border-radius: 0;
+            }
+
+            @include mixins.screen(md) {
+                padding: 10px 25px;
+                font-size: 1.2rem;
+            }
+
+            @include mixins.screen(sm) {
+                padding: 8px 25px;
+                font-size: 1.1rem;
+            }
         }
-    }
-
-    @include mixins.screen(lg) {
-        position: static;
-        display: none;
-        width: 100%;
-        transform: none;
-        background: #fff;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 }
